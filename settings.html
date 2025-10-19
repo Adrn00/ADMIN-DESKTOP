@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Admin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+
+<body>
+  <main class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <!-- Sidebar Content -->
+      <nav class="sidebar-content">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        
+        <section class="menu-section">
+          <h4 class="sidebar-text">MAIN MENU</h4>
+          <button class="sidebar-btn" onclick="navigateTo('dashboard.html')">
+            <span class="icon ph ph-squares-four"></span>
+            <span class="fontbt">Dashboard</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('subscriptionmanagement.html')">
+            <span class="icon ph ph-newspaper"></span>
+            <span class="fontbt">Subscription Management</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('billing.html')">
+            <span class="icon ph ph-invoice"></span>
+            <span class="fontbt">Billing and Invoice</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('joborder.html')">
+            <span class="icon ph ph-users-three"></span>
+            <span class="fontbt">Job Order</span>
+          </button>
+        </section>
+
+        <hr class="divider" />
+
+        <section class="menu-section">
+          <h4 class="sidebar-text">GENERAL</h4>
+          <button class="sidebar-btn" onclick="navigateTo('support.html')">
+            <span class="icon ph ph-ticket"></span>
+            <span class="fontbt">Support Tickets</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('livechats.html')">
+            <span class="icon ph ph-chat-circle-dots"></span>
+            <span class="fontbt">Live Chats</span>
+          </button>
+          <button class="sidebar-btn active" onclick="navigateTo('settings.html')">
+            <span class="icon ph ph-gear"></span>
+            <span class="fontbt">Settings</span>
+          </button>
+        </section>
+
+        <button class="sidebar-btn logout">
+          <span class="icon ph ph-sign-out"></span>
+          <span class="fontbt">Log Out</span>
+        </button>
+      </nav>
+    </aside>
+    <!-- MAIN SECTION -->
+    <main class="main-section">
+  <!-- HEADER -->
+  <header class="header">
+    <section class="header-left">
+      <h1>Settings</h1>
+      <p>Manage your account, profile, and security.</p>
+    </section>
+
+    <section class="header-right">
+      <span class="ph ph-bell notification"></span>
+      <article class="profile">
+        <figure class="avatar">A</figure>
+        <figcaption class="profile-info">
+          <p class="name">Admin</p>
+          <p class="fullname">Lawrence Adrian De Guzman</p>
+        </figcaption>
+      </article>
+    </section>
+  </header>
+
+  <!-- SETTINGS CONTENT -->
+  <section class="settings-content">
+    <figure class="profile-photo">
+      <img src="https://via.placeholder.com/120" alt="Profile Photo" />
+      <button class="change-photo-btn">
+        <i class="ph ph-camera"></i>
+      </button>
+    </figure>
+    <h2 class="client-name">Lawrence Adrian De Guzman</h2>
+    <p class="client-email">lawrence@example.com</p>
+
+    <!-- Edit Profile Section -->
+    <article class="edit-profile-section">
+      <i class="ph ph-user-gear"></i>
+      <p>Edit Profile</p>
+      <button class="arrow-btn" id="openEditProfile">›</button>
+    </article>
+
+    <!-- About Section -->
+    <article class="about-section">
+      <i class="ph ph-info"></i>
+      <p>About</p>
+      <button class="arrow-btn" id="openAbout">›</button>
+    </article>
+
+    <article class="system-config-section">
+      <i class="ph ph-gear-six"></i>
+      <p>System Configuration</p>
+      <button class="arrow-btn" id="openSystemConfig">›</button>
+    </article>
+    
+    <!-- System Activity Log Section -->
+    <article class="system-activity-section">
+      <i class="ph ph-clock-counter-clockwise"></i>
+      <p>System Activity Log</p>
+      <button class="arrow-btn" id="openActivityLog">›</button>
+    </article>
+  </section>
+
+  <!-- EDIT PROFILE MODAL -->
+  <section class="modal" id="editProfileModal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2>Edit Profile</h2>
+        <button class="close-btn" id="closeEditProfile">✕</button>
+      </header>
+
+      <form class="edit-profile-form">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter full name" value="Lawrence Adrian De Guzman" />
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" value="lawrence@example.com" />
+
+        <div class="modal-buttons">
+          <button type="button" id="openChangePass">Change Password</button>
+          <button type="button" id="openInbox">Inbox</button>
+        </div>
+
+        <button type="submit" class="save-btn">Save Changes</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CHANGE PASSWORD MODAL -->
+  <section class="modal" id="changePassModal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2>Change Password</h2>
+        <button class="close-btn" id="closeChangePass">✕</button>
+      </header>
+
+      <form class="change-pass-form">
+        <label>Current Password</label>
+        <input type="password" placeholder="Enter current password" />
+
+        <label>New Password</label>
+        <input type="password" placeholder="Enter new password" />
+
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm new password" />
+
+        <button type="submit" class="save-btn">Update Password</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- INBOX MODAL -->
+  <section class="modal" id="inboxModal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2>Inbox</h2>
+        <button class="close-btn" id="closeInbox">✕</button>
+      </header>
+
+      <ul class="inbox-list">
+        <li>
+          <strong>System</strong> – Your password was updated successfully.
+          <span class="date">Oct 12, 2025</span>
+        </li>
+        <li>
+          <strong>Support</strong> – New update available for CMS dashboard.
+          <span class="date">Oct 10, 2025</span>
+        </li>
+        <li>
+          <strong>Team</strong> – Meeting scheduled at 3PM tomorrow.
+          <span class="date">Oct 9, 2025</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT MODAL -->
+  <section class="modal" id="aboutModal">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2>About Us</h2>
+        <button class="close-btn" id="closeAbout">✕</button>
+      </header>
+
+      <article class="about-content">
+        <h3>Who We Are</h3>
+        <p>
+          We are FNTC Solutions — a passionate team of developers and designers
+          dedicated to providing efficient management tools for modern
+          businesses. Our platform allows administrators to monitor, manage, and
+          engage with clients seamlessly.
+        </p>
+
+        <h3>Our Mission</h3>
+        <p>
+          To empower organizations with smart, reliable, and scalable digital
+          systems that simplify operations and improve customer satisfaction.
+        </p>
+
+        <h3>Contact Us</h3>
+        <ul class="contact-info">
+          <li>Email: support@fntcsolutions.com</li>
+          <li>Phone: (02) 1234 5678</li>
+          <li>Address: 123 Business Park, Makati City, Philippines</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- SYSTEM CONFIGURATION MODAL -->
+  <section class="modal" id="systemConfigModal">
+  <div class="modal-content">
+    <header class="modal-header">
+      <h2>System Configuration</h2>
+      <button class="close-btn" id="closeSystemConfig">✕</button>
+    </header>
+
+    <form class="system-config-form">
+      <!-- Email Settings -->
+      <section class="config-section">
+        <h3>Email Settings</h3>
+        <label>Email 'From' Name</label>
+        <input type="text" placeholder="Enter sender name" />
+
+        <label>Email 'From' Address</label>
+        <input type="email" placeholder="Enter sender email" />
+      </section>
+
+      <!-- API Keys -->
+      <section class="config-section">
+        <h3>API Keys</h3>
+        <label>SendGrid API Key</label>
+        <input type="text" placeholder="Enter SendGrid API Key" />
+
+        <label>Xendit API Key</label>
+        <input type="text" placeholder="Enter Xendit API Key" />
+      </section>
+
+      <button type="submit" class="save-btn">Save Configuration</button>
+    </form>
+  </div>
+  </section>
+
+  <!-- SYSTEM ACTIVITY LOG MODAL -->
+  <section class="modal" id="activityLogModal">
+  <div class="modal-content">
+    <header class="modal-header">
+      <h2>System Activity Log</h2>
+      <button class="close-btn" id="closeActivityLog">✕</button>
+    </header>
+
+    <section class="activity-log-container">
+      <ul class="activity-log-list">
+        <li>
+          <span class="log-time">2025-10-16 09:42 AM</span>
+          <p><strong>Admin</strong> updated system configuration.</p>
+        </li>
+        <li>
+          <span class="log-time">2025-10-15 03:25 PM</span>
+          <p><strong>Admin</strong> changed user <em>John Doe</em>’s access level.</p>
+        </li>
+        <li>
+          <span class="log-time">2025-10-14 10:11 AM</span>
+          <p><strong>Admin</strong> created a new billing record.</p>
+        </li>
+        <li>
+          <span class="log-time">2025-10-13 01:55 PM</span>
+          <p><strong>System</strong> automatically backed up database.</p>
+        </li>
+        <li>
+          <span class="log-time">2025-10-12 08:30 AM</span>
+          <p><strong>Admin</strong> logged into the CMS dashboard.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+  </section>
+
+</main>
+
+  </main>
+  <script src="scripts/renderer.js"></script>
+  <script src="scripts/settings.js"></script>
+</body>
+</html>

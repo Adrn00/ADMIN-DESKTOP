@@ -1,0 +1,542 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #07B2C6;
+  color: #111827;
+  display: flex;
+  height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 302px 1fr;
+  width: 100%;
+  height: 100vh;
+}
+/* ============================= */
+/*       SIDEBAR CONTAINER       */
+/* ============================= */
+.sidebar {
+  width: 302px;
+  height: 100vh;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/*        SIDEBAR CONTENT        */
+/* ============================= */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+
+/* ============================= */
+/*             LOGO              */
+/* ============================= */
+.logo {
+  width: 217px;
+  height: 102px;
+  margin: 30px auto 20px auto;
+  display: block;
+}
+
+/* ============================= */
+/*          MENU SECTION         */
+/* ============================= */
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 10px;
+}
+
+.sidebar-text {
+  font-family: "Segoe UI", sans-serif;
+  color: #afb7bc;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/*          SIDEBAR BTNS         */
+/* ============================= */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 43px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0 15px;
+  color: #006d7a;
+}
+
+.sidebar-btn .icon {
+  font-size: 18px;
+  color: #006d7a;
+  transition: color 0.2s ease;
+  margin-top: 2px;
+}
+
+.fontbt {
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/*         HOVER EFFECTS         */
+/* ============================= */
+.sidebar-btn:hover {
+  background-color: #e0f7fa;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn:hover .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*        ACTIVE BUTTON STATE    */
+/* ============================= */
+.sidebar-btn.active {
+  background-color: #d8f1f3;
+  border: 1px solid #006d7a;
+  color: #004f55;
+  
+}
+
+.sidebar-btn.active .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*          DIVIDER LINE         */
+/* ============================= */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+/* ============================= */
+/*          LOGOUT BUTTON        */
+/* ============================= */
+.logout {
+  margin: 20px 30px;
+  background-color: transparent;
+  color: #006d7a;
+  font-weight: 600;
+  width: 150px;
+}
+
+.logout:hover {
+  background-color: #ffeeee;
+  border: 1px solid #d43f3a;
+  color: #d43f3a;
+}
+
+
+
+/* ============================= */
+/*          HEADER               */
+/* ============================= */
+.header {
+  height: 100px;
+  background-color: #07b2c6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 15px 15px ;
+}
+
+/* Header Left */
+.header-left h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-left p {
+  color: white;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+}
+
+/* Header Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Notification Icon */
+.notification {
+  font-family: "Phosphor Fill";
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.notification:hover {
+  transform: scale(1.1);
+  color: #e0f7fa;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.profile-info .fullname {
+  font-size: 12px;
+  color: white;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ============================= */
+/*         BILLING SECTION       */
+/* ============================= */
+
+.billing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.create-bill-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.search-bar {
+  position: relative;
+  margin: 20px 0;
+}
+
+.search-bar input {
+  width: 95%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tab-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.tab {
+  border: none;
+  background: #e0e6f1;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.client-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.client-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 96%;
+  margin-left: 20px;
+}
+
+.client-item:hover {
+  background: #f1f5fb;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.status.due {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.status.paid {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+.status.overdue {
+  background: #f5c2c7;
+  color: #58151c;
+}
+
+.amount {
+  font-weight: 600;
+}
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  position: relative;
+}
+
+.modal-content.small {
+  width: 350px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.status-box {
+  background: #f8d7da;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bill-to {
+  background: #f5f7fa;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.details p {
+  margin: 5px 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn.record { background: #007bff; }
+.btn.paid { background: #198754; }
+.btn.edit { background: #ffc107; color: #333; }
+.btn.delete { background: #dc3545; }
+.btn.cancel { background: #6c757d; }
+.btn.submit { background: #007bff; }
+
+/* Toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* ----------------------------- */
+/* CREATE BILL MODAL STYLES */
+/* ----------------------------- */
+#createBillModal .modal-content.large {
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.create-bill-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.bill-tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #e0e6f1;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.bill-tab.active {
+  background: #007bff;
+  color: #fff;
+}
+
+.bill-form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bill-form.active {
+  display: flex;
+}
+
+.bill-form label {
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.bill-form input,
+.bill-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-item-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e7f0ff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.add-item-btn:hover {
+  background: #d6eaff;
+}
+
+.btn.create {
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+}

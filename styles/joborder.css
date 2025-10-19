@@ -1,0 +1,521 @@
+/* ============================= */
+/*        GLOBAL STYLES          */
+/* ============================= */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #07B2C6;
+  color: #111827;
+  display: flex;
+  height: 100vh;
+}
+
+main.layout {
+  display: grid;
+  grid-template-columns: 302px 1fr;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ============================= */
+/*       SIDEBAR CONTAINER       */
+/* ============================= */
+aside.sidebar {
+  width: 302px;
+  height: 100vh;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/*        SIDEBAR CONTENT        */
+/* ============================= */
+nav.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+
+/* ============================= */
+/*             LOGO              */
+/* ============================= */
+.logo {
+  width: 217px;
+  height: 102px;
+  margin: 30px auto 20px auto;
+  display: block;
+}
+
+/* ============================= */
+/*          MENU SECTION         */
+/* ============================= */
+section.menu-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 10px;
+}
+
+.sidebar-text {
+  font-family: "Segoe UI", sans-serif;
+  color: #afb7bc;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/*          SIDEBAR BTNS         */
+/* ============================= */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 43px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0 15px;
+  color: #006d7a;
+}
+
+.sidebar-btn .icon {
+  font-size: 18px;
+  color: #006d7a;
+  transition: color 0.2s ease;
+  margin-top: 2px;
+}
+
+.fontbt {
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/*         HOVER EFFECTS         */
+/* ============================= */
+.sidebar-btn:hover {
+  background-color: #e0f7fa;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn:hover .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*        ACTIVE BUTTON STATE    */
+/* ============================= */
+.sidebar-btn.active {
+  background-color: #d8f1f3;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn.active .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*          DIVIDER LINE         */
+/* ============================= */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+/* ============================= */
+/*          LOGOUT BUTTON        */
+/* ============================= */
+.logout {
+  margin: 20px 30px;
+  background-color: transparent;
+  color: #006d7a;
+  font-weight: 600;
+  width: 150px;
+}
+
+.logout:hover {
+  background-color: #ffeeee;
+  border: 1px solid #d43f3a;
+  color: #d43f3a;
+}
+
+/* ============================= */
+/*            MAIN SECTION       */
+/* ============================= */
+section.main-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ============================= */
+/*             HEADER             */
+/* ============================= */
+header.header {
+  height: 100px;
+  background-color: #07b2c6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Header Left */
+.header-left h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-left p {
+  color: white;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+}
+
+/* Header Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Notification Icon */
+.notification {
+  font-family: "Phosphor Fill";
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.notification:hover {
+  transform: scale(1.1);
+  color: #e0f7fa;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.profile-info .fullname {
+  font-size: 12px;
+  color: white;
+  opacity: 0.9;
+  margin: 0;
+}
+
+
+:root{
+  --bg: #FFFFFF;
+  --card-border: #E6E6E6;
+  --stroke: #818181;
+  --muted: #7E7E7E;
+  --black: #000000;
+  --primary: #07B2C6;
+  --radius-small: 5px;
+  --radius-card: 10px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+
+/* JOB ORDERS SECTION container (requested width/height) */
+.joborders-section{
+  width:95%;      /* requested 1100w */
+  height:854px;      /* requested 854h */
+  background:var(--bg); /* #FFFFFF */
+  border-radius:5px; /* 5 radius */
+  padding:20px 24px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+  margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* header */
+.joborders-header h1{
+  margin:0;
+  font-size:20px;
+  font-weight:700;
+}
+.joborders-header p{
+  margin:4px 0 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* CARDS ROW (top) */
+.cards-row{
+  display:flex;
+  gap:16px;
+  align-items:stretch;
+}
+
+/* individual card style - requested 185w x 129h, 10 radius, border color E6E6E6 and inside white */
+.summary-card{
+  width:95%;
+  height:129px;
+  border-radius:10px; /* 10 radius */
+  background:#FFFFFF;
+  border:1px solid var(--card-border); /* E6E6E6 */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+/* card inner layout */
+.card-inner{ text-align:center; padding:8px; }
+.card-title{
+  font-family:Inter, sans-serif;
+  font-size:15px; /* requested 15 size */
+  font-weight:500; /* medium */
+  color:#7E7E7E; /* 7E7E7E color */
+  margin-bottom:8px;
+}
+.card-value{
+  font-family:Inter, sans-serif;
+  font-size:40px; /* requested 40 */
+  font-weight:700; /* bold */
+  color:#000000;
+  line-height:1;
+}
+
+/* CONTROLS ROW (search, filter, actions) */
+/* requested a 1002w x 77h bar (we adapt inside the layout). We'll size inputs accordingly */
+.controls-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+/* left side search/filter */
+.search-filter{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* search input: 136w x 45h, stroke 818181 */
+.search-input{
+  width:136px;
+  height:45px;
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid #818181;
+  font-size:14px;
+}
+
+/* filter select 244w x 45h */
+.filter-select{
+  width:244px;
+  height:45px;
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid #d0d0d0;
+  font-size:14px;
+}
+
+/* right side actions */
+.actions-right{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+/* simple button styles */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  border:1px solid transparent;
+  background:#fff;
+}
+.btn .icon{font-size:14px}
+.btn.primary{
+  background:var(--primary);
+  color:white;
+  border-color:var(--primary);
+}
+.btn.ghost{
+  background:#fff;
+  color:#222;
+  border:1px solid #ddd;
+}
+.btn.outline{
+  background:transparent;
+  color:#222;
+  border:1px solid #ddd;
+}
+.btn.sm{padding:6px 8px;font-size:13px;border-radius:6px}
+
+/* TABLE wrapper requested width 1013 x height 525 */
+.table-wrap{
+  width:98%; /* requested */
+  height:525px; /* requested */
+  overflow:auto;
+  border-radius:6px;
+  border:1px solid #eef2f4;
+  padding:12px;
+  background:#ffffff;
+  margin-top:6px;
+}
+
+/* table styling */
+.jobs-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+.jobs-table thead th{
+  text-align:left;
+  padding:12px 10px;
+  background:#f8fafb;
+  border-bottom:1px solid #e6eef0;
+  color:#374151;
+  font-weight:600;
+}
+.jobs-table tbody td{
+  padding:12px 10px;
+  border-top:1px solid #f1f5f8;
+  vertical-align:middle;
+}
+.actions-cell{display:flex;gap:8px;}
+
+/* status badges */
+.status-badge{
+  padding:6px 8px;
+  border-radius:6px;
+  font-weight:600;
+  font-size:12px;
+  color:#fff;
+}
+.status-badge.pending{background:#f59e0b}
+.status-badge.inprogress{background:#06b6d4}
+.status-badge.completed{background:#10b981}
+.status-badge.overdue{background:#ef4444}
+
+/* DIALOG (modal) base */
+.dialog::backdrop{ background: rgba(0,0,0,0.45) }
+
+.dialog {
+  border:none;
+  border-radius:8px;
+  padding:0;
+  width:560px;
+  max-width:92%;
+}
+.dialog-inner{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  padding:18px;
+  background:#fff;
+  border-radius:6px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* dialog header */
+.dialog-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.dialog-header h3{margin:0;font-size:18px}
+.dialog-header .close{
+  background:transparent;border:none;font-size:18px;cursor:pointer;
+}
+
+/* dialog body */
+.dialog-body{ font-size:14px;color:#333}
+.dialog-body .muted{color:#6b7280;font-size:13px}
+.archive-list{ margin:10px 0 0 0; padding-left:16px }
+
+/* form grid for create/edit */
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+.form-grid label{ display:flex; flex-direction:column; gap:6px; font-size:13px;}
+.form-grid label.full{ grid-column:1/ -1; }
+
+/* assign fieldset */
+.assign-fieldset{ grid-column:1/-1; border:1px solid #eee; padding:10px; border-radius:6px}
+.toggle-row{ display:flex; align-items:center; gap:12px; margin-bottom:8px }
+
+/* toggle switch (simple) */
+.switch{ position:relative; display:inline-block; width:44px; height:24px; }
+.switch input{display:none}
+.switch .slider{
+  position:absolute; inset:0; background:#d1d5db; border-radius:24px; transition:all .18s;
+}
+.switch .slider::after{
+  content:""; position:absolute; top:3px; left:3px; width:18px; height:18px; background:white; border-radius:50%; transition:all .18s;
+}
+.switch input:checked + .slider{ background:var(--primary) }
+.switch input:checked + .slider::after{ transform:translateX(20px) }
+
+/* two-column details in view */
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.dialog-actions{ display:flex; justify-content:flex-end; gap:12px; margin-top:8px }
+
+/* small helpers */
+.sr-only{
+  position:absolute!important;
+  height:1px;width:1px;overflow:hidden;
+  clip:rect(1px,1px,1px,1px);white-space:nowrap;
+}
+
+/* responsive minor tweaks */
+@media (max-width:1200px){
+  .joborders-section{ width:95%; height:auto }
+  .table-wrap{ width:100%; height:420px }
+  .cards-row{ gap:12px; flex-wrap:wrap }
+}

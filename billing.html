@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Admin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles/billing.css">
+</head>
+
+<body>
+  <div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <!-- Sidebar Content -->
+    <div class="sidebar-content">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <div class="menu-section">
+        <h4 class="sidebar-text">MAIN MENU</h4>
+        <button class="sidebar-btn" onclick="navigateTo('dashboard.html')">
+          <span class="icon ph ph-squares-four"></span>
+          <span class="fontbt">Dashboard</span>
+        </button>
+        <button class="sidebar-btn" onclick="navigateTo('subscriptionmanagement.html')">
+          <span class="icon ph ph-newspaper"></span>
+          <span class="fontbt">Subscription Management</span>
+        </button>
+        <button class="sidebar-btn active" onclick="navigateTo('billing.html')">
+          <span class="icon ph ph-invoice"></span>
+          <span class="fontbt">Billing and Invoice</span>
+        </button>
+        <button class="sidebar-btn" onclick="navigateTo('joborder.html')">
+          <span class="icon ph ph-users-three"></span>
+          <span class="fontbt">Job Order</span>
+        </button>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="menu-section">
+        <h4 class="sidebar-text">GENERAL</h4>
+        <button class="sidebar-btn" onclick="navigateTo('support.html')">
+            <span class="icon ph ph-ticket"></span>
+            <span class="fontbt">Support Tickets</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('livechats.html')">
+            <span class="icon ph ph-chat-circle-dots"></span>
+            <span class="fontbt">Live Chats</span>
+          </button>
+        <button class="sidebar-btn" onclick="navigateTo('settings.html')">
+          <span class="icon ph ph-gear"></span>
+          <span class="fontbt">Settings</span>
+        </button>
+      </div>
+
+      <button class="sidebar-btn logout">
+        <span class="icon ph ph-sign-out"></span>
+        <span class="fontbt">Log Out</span>
+      </button>
+    </div>
+  </aside>
+  <!-- MAIN SECTION -->
+   <div class="main-section">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <h1>Billing and Invoice</h1>
+        <p>Manage billing cycles, generate, and send invoices.</p>
+      </div>
+
+      <div class="header-right">
+        <span class="ph ph-bell notification"></span>
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div class="profile-info">
+            <p class="name">Admin</p>
+            <p class="fullname">Lawrence Adrian De Guzman</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BILLING SECTION -->
+    <section class="billing-section">
+      <div class="billing-header">
+        <!-- CREATEA BILL -->
+        <button class="create-bill-btn">
+          <i class="ph ph-plus"></i> Create Bill
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search by client name, ID or email...">
+        <i class="ph ph-magnifying-glass search-icon"></i>
+      </div>
+
+       <!-- Tabs -->
+      <div class="tab-container">
+        <button class="tab active" data-tab="all">All</button>
+        <button class="tab" data-tab="overdue">Overdue</button>
+        <button class="tab" data-tab="pending">Pending</button>
+        <button class="tab" data-tab="paid">Paid</button>
+      </div>
+
+      <!-- Client List -->
+      <div class="client-list" id="client-list">
+        <!-- Due -->
+        <div class="client-item" data-status="due">
+          <div class="client-info">
+            <h4>John Doe</h4>
+            <p>ID: 10234 | john@example.com</p>
+            <p>Due Date: Oct 15, 2025</p>
+          </div>
+          <div class="client-right">
+            <p class="amount">$45.00</p>
+            <span class="status due">Due</span>
+          </div>
+        </div>
+
+        <!-- Paid -->
+        <div class="client-item" data-status="paid">
+          <div class="client-info">
+            <h4>Jane Smith</h4>
+            <p>ID: 10235 | jane@example.com</p>
+            <p>Paid Date: Oct 10, 2025</p>
+          </div>
+          <div class="client-right">
+            <p class="amount">$80.00</p>
+            <span class="status paid">Paid</span>
+          </div>
+        </div>
+
+        <!-- Pending -->
+        <div class="client-item" data-status="pending">
+          <div class="client-info">
+            <h4>Michael Cruz</h4>
+            <p>ID: 10236 | michael@example.com</p>
+            <p>Due Date: Oct 20, 2025</p>
+          </div>
+          <div class="client-right">
+            <p class="amount">$60.00</p>
+            <span class="status pending">Pending</span>
+          </div>
+        </div>
+
+        <!-- Overdue -->
+        <div class="client-item" data-status="overdue">
+          <div class="client-info">
+            <h4>Sophia Reyes</h4>
+            <p>ID: 10237 | sophia@example.com</p>
+            <p>Due Date: Oct 5, 2025</p>
+          </div>
+          <div class="client-right">
+            <p class="amount">$100.00</p>
+            <span class="status overdue">Overdue</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- MODAL (Bill Details) -->
+  <div class="modal" id="billModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Bill #10234</h2>
+
+      <div class="status-box due">$45.00 - Due</div>
+
+      <div class="bill-to">
+        <p><strong>Billed To:</strong> John Doe <br>
+        <i class="ph ph-envelope"></i> john@example.com</p>
+      </div>
+
+      <div class="details">
+        <p><strong>Statement Date:</strong> Oct 1, 2025</p>
+        <p><strong>Due Date:</strong> Oct 15, 2025</p>
+        <p><strong>Invoice Number:</strong> INV-4501</p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn record">Record Partial</button>
+        <button class="btn paid">Mark as Paid</button>
+        <button class="btn edit">Edit Bill</button>
+        <button class="btn delete">Delete Bill</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECORD PARTIAL MODAL -->
+  <div class="modal" id="recordModal">
+    <div class="modal-content small">
+      <span class="close-btn" id="closeRecord">&times;</span>
+      <h2>Record Partial Payment</h2>
+      <label>Enter Exact Amount Paid:</label>
+      <input type="text" placeholder="Enter amount...">
+      <label>Notes (e.g., Receipt Number):</label>
+      <textarea placeholder="Enter notes..."></textarea>
+
+      <div class="toggle-row">
+        <p>Carry balance to next month?</p>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn cancel">Cancel</button>
+        <button class="btn submit">Submit</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CREATE BILL MODAL -->
+<div class="modal" id="createBillModal">
+  <div class="modal-content small">
+    <span class="close-btn" id="closeCreateBill">&times;</span>
+    <h2>Create New Bill</h2>
+
+    <label>Client Name:</label>
+    <input type="text" placeholder="Enter client name..." />
+
+    <label>Client Email:</label>
+    <input type="text" placeholder="Enter client email..." />
+
+    <label>Amount:</label>
+    <input type="number" placeholder="Enter amount..." />
+
+    <label>Due Date:</label>
+    <input type="date" />
+
+    <div class="modal-actions">
+      <button class="btn cancel" id="cancelCreateBill">Cancel</button>
+      <button class="btn submit">Create Bill</button>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+<script src="scripts/billing.js"></script>
+
+<script src="scripts/renderer.js"></script>
+
+</body>
+</html>

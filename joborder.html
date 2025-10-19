@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Admin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles/joborder.css">
+</head>
+
+<body>
+  
+  <main class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <!-- Sidebar Content -->
+      <nav class="sidebar-content">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        
+        <section class="menu-section">
+          <h4 class="sidebar-text">MAIN MENU</h4>
+          <button class="sidebar-btn" onclick="navigateTo('dashboard.html')">
+            <span class="icon ph ph-squares-four"></span>
+            <span class="fontbt">Dashboard</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('subscriptionmanagement.html')">
+            <span class="icon ph ph-newspaper"></span>
+            <span class="fontbt">Subscription Management</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('billing.html')">
+            <span class="icon ph ph-invoice"></span>
+            <span class="fontbt">Billing and Invoice</span>
+          </button>
+          <button class="sidebar-btn active" onclick="navigateTo('joborder.html')">
+            <span class="icon ph ph-users-three"></span>
+            <span class="fontbt">Job Order</span>
+          </button>
+        </section>
+
+        <hr class="divider" />
+
+        <section class="menu-section">
+          <h4 class="sidebar-text">GENERAL</h4>
+          <button class="sidebar-btn" onclick="navigateTo('support.html')">
+            <span class="icon ph ph-ticket"></span>
+            <span class="fontbt">Support Tickets</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('livechats.html')">
+            <span class="icon ph ph-chat-circle-dots"></span>
+            <span class="fontbt">Live Chats</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('settings.html')">
+            <span class="icon ph ph-gear"></span>
+            <span class="fontbt">Settings</span>
+          </button>
+        </section>
+
+        <button class="sidebar-btn logout">
+          <span class="icon ph ph-sign-out"></span>
+          <span class="fontbt">Log Out</span>
+        </button>
+      </nav>
+    </aside>
+
+    <!-- MAIN SECTION -->
+     <section class="main-section">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <h1>Job Orders Management</h1>
+          <p>Overview of all service requests and current assignments.</p>
+        </div>
+
+        <div class="header-right">
+          <span class="ph ph-bell notification"></span>
+          <div class="profile">
+            <div class="avatar">A</div>
+            <div class="profile-info">
+              <p class="name">Admin</p>
+              <p class="fullname">Lawrence Adrian De Guzman</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Job Order -->
+       <section class="joborders-section" aria-labelledby="joborders-title">
+
+      <!-- CARD ROW -->
+      <section class="cards-row" role="list" aria-label="Job summary cards">
+        <article class="summary-card" role="listitem" data-key="active">
+          <div class="card-inner">
+            <div class="card-title">Total Active</div>
+            <div class="card-value">124</div>
+          </div>
+        </article>
+
+        <article class="summary-card" role="listitem" data-key="pending">
+          <div class="card-inner">
+            <div class="card-title">Pending Assignment</div>
+            <div class="card-value">10</div>
+          </div>
+        </article>
+
+        <article class="summary-card" role="listitem" data-key="completed">
+          <div class="card-inner">
+            <div class="card-title">Completed Today</div>
+            <div class="card-value">19</div>
+          </div>
+        </article>
+
+        <article class="summary-card" role="listitem" data-key="overdue">
+          <div class="card-inner">
+            <div class="card-title">Overdue</div>
+            <div class="card-value">13</div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SEARCH / FILTER / ACTIONS ROW -->
+      <section class="controls-row">
+        <div class="search-filter">
+          <label class="sr-only" for="job-search">Search</label>
+          <input id="job-search" class="search-input" type="search" placeholder="Search" />
+
+          <label class="sr-only" for="job-filter">Filter</label>
+          <select id="job-filter" class="filter-select">
+            <option>All Types</option>
+            <option>Installation</option>
+            <option>Repair</option>
+            <option>Maintenance</option>
+            <option>Upgrade/Downgrade</option>
+            <option>Disconnection</option>
+            <option>Over Due</option>
+          </select>
+        </div>
+
+        <div class="actions-right">
+          <button id="archiveBtn" class="btn ghost" type="button">
+            <span class="icon">📦</span> Archive
+          </button>
+
+          <button id="createOrderBtn" class="btn primary" type="button">
+            <span class="icon">＋</span> Create New Order
+          </button>
+        </div>
+      </section>
+
+      <!-- JOBS TABLE -->
+      <section class="table-wrap" aria-label="Job orders table">
+        <table class="jobs-table" aria-describedby="jobs-desc">
+          <caption id="jobs-desc" class="sr-only">List of job orders with status and assigned technicians</caption>
+          <colgroup>
+            <col style="width:13%">
+            <col style="width:28%">
+            <col style="width:18%">
+            <col style="width:14%">
+            <col style="width:17%">
+            <col style="width:10%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Job ID</th>
+              <th>Customer</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Assigned Tech</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-job='{"id":"JOB-1001","customer":"Maria Santos","type":"Installation","status":"Pending","tech":"—","address":"123 Rizal St.","requested":"10/02/2025"}'>
+              <td>JOB-1001</td>
+              <td>Maria Santos</td>
+              <td>Installation</td>
+              <td><span class="status-badge pending">Pending</span></td>
+              <td>—</td>
+              <td class="actions-cell">
+                <button class="btn sm view-detail">View Details</button>
+                <button class="btn sm outline assign-tech">Assign Technician</button>
+              </td>
+            </tr>
+
+            <tr data-job='{"id":"JOB-1002","customer":"John Dela Cruz","type":"Repair","status":"In Progress","tech":"Tech A","address":"45 Mabini Ave.","requested":"10/07/2025"}'>
+              <td>JOB-1002</td>
+              <td>John Dela Cruz</td>
+              <td>Repair</td>
+              <td><span class="status-badge inprogress">In Progress</span></td>
+              <td>Tech A</td>
+              <td class="actions-cell">
+                <button class="btn sm view-detail">View Details</button>
+                <button class="btn sm outline assign-tech">Assign Technician</button>
+              </td>
+            </tr>
+
+            <tr data-job='{"id":"JOB-1003","customer":"Ana Reyes","type":"Upgrade/Downgrade","status":"Completed","tech":"Tech B","address":"2 Bonifacio Rd.","requested":"10/09/2025"}'>
+              <td>JOB-1003</td>
+              <td>Ana Reyes</td>
+              <td>Upgrade/Downgrade</td>
+              <td><span class="status-badge completed">Completed</span></td>
+              <td>Tech B</td>
+              <td class="actions-cell">
+                <button class="btn sm view-detail">View Details</button>
+                <button class="btn sm outline assign-tech">Assign Technician</button>
+              </td>
+            </tr>
+
+            <tr data-job='{"id":"JOB-1004","customer":"Michael Cruz","type":"Disconnection","status":"Overdue","tech":"—","address":"88 Taft Ave.","requested":"09/28/2025"}'>
+              <td>JOB-1004</td>
+              <td>Michael Cruz</td>
+              <td>Disconnection</td>
+              <td><span class="status-badge overdue">Overdue</span></td>
+              <td>—</td>
+              <td class="actions-cell">
+                <button class="btn sm view-detail">View Details</button>
+                <button class="btn sm outline assign-tech">Assign Technician</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+       </section>
+  </main>
+
+  <!-- ARCHIVE DIALOG -->
+  <dialog id="archiveDialog" class="dialog">
+    <form method="dialog" class="dialog-inner">
+      <header class="dialog-header">
+        <h3>Archives</h3>
+        <button class="close" type="button" onclick="document.getElementById('archiveDialog').close()">✕</button>
+      </header>
+
+      <section class="dialog-body">
+        <p class="muted">Previous jobs (installation, disconnection, etc.)</p>
+        <ul class="archive-list">
+          <li><strong>JOB-0901</strong> — Installation — 2025-08-02</li>
+          <li><strong>JOB-0899</strong> — Disconnection — 2025-07-22</li>
+          <li><strong>JOB-0885</strong> — Repair — 2025-06-12</li>
+          <!-- more sample archive items -->
+        </ul>
+      </section>
+
+      <footer class="dialog-actions">
+        <button class="btn outline" type="button" onclick="document.getElementById('archiveDialog').close()">Close</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- CREATE ORDER DIALOG -->
+  <dialog id="createOrderDialog" class="dialog">
+    <form method="dialog" class="dialog-inner" id="createOrderForm">
+      <header class="dialog-header">
+        <h3>Create New Order</h3>
+        <button class="close" type="button" onclick="document.getElementById('createOrderDialog').close()">✕</button>
+      </header>
+
+<section class="dialog-body form-grid">
+        <label>
+          Job ID
+          <input type="text" name="jobId" required placeholder="e.g. JOB-1010">
+        </label>
+        <label>
+          Customer's Name
+          <input type="text" name="customerName" required>
+        </label>
+
+        <label>
+          Type
+          <select name="type" required>
+            <option>Installation</option>
+            <option>Repair</option>
+            <option>Maintenance</option>
+            <option>Upgrade/Downgrade</option>
+            <option>Disconnection</option>
+          </select>
+        </label>
+
+        <label class="full">
+          Address
+          <input type="text" name="address" required>
+        </label>
+
+        <label>
+          Contact Number
+          <input type="tel" name="contact" required>
+        </label>
+
+        <label>
+          Email Address
+          <input type="email" name="email" required>
+        </label>
+
+        <fieldset class="assign-fieldset">
+          <legend>Assign Technicians</legend>
+
+          <div class="toggle-row">
+            <label class="switch">
+              <input type="checkbox" id="autoAssignCreate" checked>
+              <span class="slider"></span>
+            </label>
+            <span class="toggle-label">Auto Assign Technician</span>
+          </div>
+
+          <label class="full">
+            Manual Select Technician
+            <select name="manualTech" id="manualTechCreate" disabled>
+              <option>Tech A</option>
+              <option>Tech B</option>
+              <option>Tech C</option>
+            </select>
+          </label>
+        </fieldset>
+      <footer class="dialog-actions">
+        <button class="btn primary" type="submit">Create</button>
+        <button class="btn outline" type="button" onclick="document.getElementById('createOrderDialog').close()">Cancel</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- VIEW DETAILS DIALOG -->
+  <dialog id="viewDetailDialog" class="dialog">
+    <article class="dialog-inner">
+      <header class="dialog-header">
+        <h3>Job Details</h3>
+        <button class="close" type="button" onclick="document.getElementById('viewDetailDialog').close()">✕</button>
+      </header>
+
+      <section class="dialog-body two-col">
+        <div>
+          <p><strong>Job ID:</strong> <span id="detail_jobid">JOB-XXXX</span></p>
+          <p><strong>Job Type:</strong> <span id="detail_type">—</span></p>
+          <p><strong>Current Status:</strong> <span id="detail_status">—</span></p>
+        </div>
+
+        <div>
+          <p><strong>Customer:</strong> <span id="detail_customer">—</span></p>
+          <p><strong>Address:</strong> <span id="detail_address">—</span></p>
+          <p><strong>Requested Date:</strong> <span id="detail_date">—</span></p>
+        </div>
+      </section>
+
+      <section class="dialog-body">
+        <h4>Assign Technician</h4>
+        <p id="detail_assign_status">Not assigned</p>
+      </section>
+
+      <footer class="dialog-actions">
+        <button class="btn" id="openEditFromView">Edit</button>
+        <button class="btn outline" type="button" onclick="document.getElementById('viewDetailDialog').close()">Close</button>
+      </footer>
+    </article>
+  </dialog>
+
+  <!-- EDIT DETAILS DIALOG -->
+  <dialog id="editDialog" class="dialog">
+    <form method="dialog" class="dialog-inner" id="editForm">
+      <header class="dialog-header">
+        <h3>Edit Job</h3>
+        <button class="close" type="button" onclick="document.getElementById('editDialog').close()">✕</button>
+      </header>
+
+      <section class="dialog-body form-grid">
+        <label>
+          Job ID
+          <input id="edit_jobid" name="jobId" type="text" required>
+        </label>
+
+        <label>
+          Customer's Name
+          <input id="edit_customer" name="customer" type="text" required>
+        </label>
+
+        <label>
+          Type
+          <select id="edit_type" name="type">
+            <option>Installation</option>
+            <option>Repair</option>
+            <option>Maintenance</option>
+            <option>Upgrade/Downgrade</option>
+            <option>Disconnection</option>
+          </select>
+        </label>
+
+        <label>
+          Status
+          <select id="edit_status" name="status">
+            <option>Pending</option>
+            <option>In Progress</option>
+            <option>Completed</option>
+            <option>Overdue</option>
+          </select>
+        </label>
+
+        <label class="full">
+          Address
+          <input id="edit_address" name="address" type="text">
+        </label>
+
+        <label>
+          Requested Date
+          <input id="edit_date" name="requested" type="date">
+        </label>
+      </section>
+
+      <footer class="dialog-actions">
+        <button class="btn primary" type="submit">Save</button>
+        <button class="btn outline" type="button" onclick="document.getElementById('editDialog').close()">Cancel</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <!-- ASSIGN TECHNICIAN DIALOG -->
+  <dialog id="assignDialog" class="dialog">
+    <form method="dialog" class="dialog-inner" id="assignForm">
+      <header class="dialog-header">
+        <h3>Assign Technician</h3>
+        <button class="close" type="button" onclick="document.getElementById('assignDialog').close()">✕</button>
+      </header>
+
+      <section class="dialog-body">
+        <div class="toggle-row">
+          <label class="switch">
+            <input type="checkbox" id="autoAssignAssign" checked>
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label">Auto Assign Technician</span>
+        </div>
+
+        <label>
+          Manual Select Technician
+          <select id="manualTechAssign" disabled>
+            <option>Tech A</option>
+            <option>Tech B</option>
+            <option>Tech C</option>
+          </select>
+        </label>
+
+        <label>
+          Schedule Date
+          <input type="date" id="assignDate">
+        </label>
+      </section>
+
+      <footer class="dialog-actions">
+        <button class="btn primary" type="submit">Save Changes</button>
+        <button class="btn outline" type="reset" id="assignReset">Reset</button>
+      </footer>
+    </form>
+  </dialog>
+  <script src="scripts/joborder.js"></script>
+  <script src="scripts/renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Admin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles/livechats.css">
+</head>
+
+<body>
+  <main class="layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <!-- Sidebar Content -->
+      <nav class="sidebar-content">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        
+        <section class="menu-section">
+          <h4 class="sidebar-text">MAIN MENU</h4>
+          <button class="sidebar-btn" onclick="navigateTo('dashboard.html')">
+            <span class="icon ph ph-squares-four"></span>
+            <span class="fontbt">Dashboard</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('subscriptionmanagement.html')">
+            <span class="icon ph ph-newspaper"></span>
+            <span class="fontbt">Subscription Management</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('billing.html')">
+            <span class="icon ph ph-invoice"></span>
+            <span class="fontbt">Billing and Invoice</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('joborder.html')">
+            <span class="icon ph ph-users-three"></span>
+            <span class="fontbt">Job Order</span>
+          </button>
+        </section>
+
+        <hr class="divider" />
+
+        <section class="menu-section">
+          <h4 class="sidebar-text">GENERAL</h4>
+          <button class="sidebar-btn" onclick="navigateTo('support.html')">
+            <span class="icon ph ph-ticket"></span>
+            <span class="fontbt">Support Tickets</span>
+          </button>
+          <button class="sidebar-btn active" onclick="navigateTo('livechats.html')">
+            <span class="icon ph ph-chat-circle-dots"></span>
+            <span class="fontbt">Live Chats</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('settings.html')">
+            <span class="icon ph ph-gear"></span>
+            <span class="fontbt">Settings</span>
+          </button>
+        </section>
+
+        <button class="sidebar-btn logout">
+          <span class="icon ph ph-sign-out"></span>
+          <span class="fontbt">Log Out</span>
+        </button>
+      </nav>
+    </aside>
+    <!-- MAIN SECTION -->
+    <main class="main-section">
+    <!-- HEADER -->
+    <header class="header">
+      <section class="header-left">
+        <h1>Live Chats Center</h1>
+        <p>Engage directly with customers, provide instant help, and ensure every inquiry gets the attention it deserves.</p>
+      </section>
+
+      <section class="header-right">
+        <span class="ph ph-bell notification"></span>
+        <article class="profile">
+          <figure class="avatar">A</figure>
+          <figcaption class="profile-info">
+            <p class="name">Admin</p>
+            <p class="fullname">Lawrence Adrian De Guzman</p>
+          </figcaption>
+        </article>
+      </section>
+    </header>
+
+    <!-- LIVE CHATS SECTION -->
+    <section class="livechats-section">
+      <aside class="active-chats">
+        <h2>Active Live Chats</h2>
+
+        <!-- Chat List -->
+        <article class="chat-card" data-user="Tungtung Sahur">
+          <header>
+            <h3>Tungtung Sahur</h3>
+            <time>10:32 AM</time>
+          </header>
+          <p>My internet suddenly disconnected.</p>
+          <footer>
+            <div class="left-buttons">
+              <button class="end-btn">End Chat</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+            <span class="msg-count">5</span>
+          </footer>
+        </article>
+
+        <article class="chat-card" data-user="Maria Santos">
+          <header>
+            <h3>Maria Santos</h3>
+            <time>10:45 AM</time>
+          </header>
+          <p>Can you help me reset my router password?</p>
+          <footer>
+            <div class="left-buttons">
+              <button class="end-btn">End Chat</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+            <span class="msg-count">3</span>
+          </footer>
+        </article>
+
+        <article class="chat-card" data-user="Paul Dela Cruz">
+          <header>
+            <h3>Paul Dela Cruz</h3>
+            <time>11:02 AM</time>
+          </header>
+          <p>I need an upgrade to my current plan.</p>
+          <footer>
+            <div class="left-buttons">
+              <button class="end-btn">End Chat</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+            <span class="msg-count">8</span>
+          </footer>
+        </article>
+
+        <article class="chat-card" data-user="Jane Doe">
+          <header>
+            <h3>Jane Doe</h3>
+            <time>11:15 AM</time>
+          </header>
+          <p>Is there maintenance today in my area?</p>
+          <footer>
+            <div class="left-buttons">
+              <button class="end-btn">End Chat</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+            <span class="msg-count">2</span>
+          </footer>
+        </article>
+
+        <article class="chat-card" data-user="John Smith">
+          <header>
+            <h3>John Smith</h3>
+            <time>11:27 AM</time>
+          </header>
+          <p>How can I check my last bill?</p>
+          <footer>
+            <div class="left-buttons">
+              <button class="end-btn">End Chat</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+            <span class="msg-count">4</span>
+          </footer>
+        </article>
+
+        <article class="chat-card" data-user="Riza Mae">
+          <header>
+            <h3>Riza Mae</h3>
+            <time>11:40 AM</time>
+          </header>
+          <p>I lost access to my account.</p>
+          <footer>
+            <div class="left-buttons">
+              <button class="end-btn">End Chat</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+            <span class="msg-count">6</span>
+          </footer>
+        </article>
+      </aside>
+
+      <!-- CHAT WINDOW -->
+      <section class="chat-window hidden">
+        <header class="chat-header">
+          <h3 id="chat-user">Client Name</h3>
+          <p class="status">Active</p>
+          <div class="chat-actions">
+            <button class="end-chat">End Chat</button>
+            <button class="close-chat">Close</button>
+          </div>
+        </header>
+
+        <section class="chat-body">
+          <div class="message user">Hi! How can I help you today?</div>
+          <div class="message client">My internet is not working properly since morning.</div>
+          <div class="message user">I’ll check your connection status, please wait a moment.</div>
+        </section>
+
+        <footer class="chat-footer">
+          <input type="text" placeholder="Type your reply..." class="chat-input">
+          <button class="send-btn"><i class="ph ph-paper-plane"></i> Send Reply</button>
+        </footer>
+      </section>
+    </section>
+  </main>
+
+
+  <script src="scripts/renderer.js"></script>
+  <script src="scripts/livechats.js"></script>
+</body>
+</html>

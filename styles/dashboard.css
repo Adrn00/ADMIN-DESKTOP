@@ -1,0 +1,588 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #07B2C6;
+  color: #111827;
+  display: flex;
+  height: 100vh;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 302px 1fr;
+  width: 100%;
+  height: 100vh;
+}
+/* ============================= */
+/*       SIDEBAR CONTAINER       */
+/* ============================= */
+.sidebar {
+  width: 302px;
+  height: 100vh;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/*        SIDEBAR CONTENT        */
+/* ============================= */
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+
+/* ============================= */
+/*             LOGO              */
+/* ============================= */
+.logo {
+  width: 217px;
+  height: 102px;
+  margin: 30px auto 20px auto;
+  display: block;
+}
+
+/* ============================= */
+/*          MENU SECTION         */
+/* ============================= */
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 10px;
+}
+
+.sidebar-text {
+  font-family: "Segoe UI", sans-serif;
+  color: #afb7bc;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/*          SIDEBAR BTNS         */
+/* ============================= */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 43px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0 15px;
+  color: #006d7a;
+}
+
+.sidebar-btn .icon {
+  font-size: 18px;
+  color: #006d7a;
+  transition: color 0.2s ease;
+  margin-top: 2px;
+}
+
+.fontbt {
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/*         HOVER EFFECTS         */
+/* ============================= */
+.sidebar-btn:hover {
+  background-color: #e0f7fa;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn:hover .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*        ACTIVE BUTTON STATE    */
+/* ============================= */
+.sidebar-btn.active {
+  background-color: #d8f1f3;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn.active .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*          DIVIDER LINE         */
+/* ============================= */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+/* ============================= */
+/*          LOGOUT BUTTON        */
+/* ============================= */
+.logout {
+  margin: 20px 30px;
+  background-color: transparent;
+  color: #006d7a;
+  font-weight: 600;
+  width: 150px;
+}
+
+.logout:hover {
+  background-color: #ffeeee;
+  border: 1px solid #d43f3a;
+  color: #d43f3a;
+}
+
+
+
+/* ============================= */
+/*          HEADER               */
+/* ============================= */
+.header {
+  height: 100px;
+  background-color: #07b2c6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 15px 15px ;
+}
+
+/* Header Left */
+.header-left h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-left p {
+  color: white;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+}
+
+/* Header Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Notification Icon */
+.notification {
+  font-family: "Phosphor Fill";
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.notification:hover {
+  transform: scale(1.1);
+  color: #e0f7fa;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.profile-info .fullname {
+  font-size: 12px;
+  color: white;
+  opacity: 0.9;
+  margin: 0;
+}
+
+
+
+/* ============================= */
+/*          4 CARDS              */
+/* ============================= */
+
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(2, 235px);
+  grid-template-rows: repeat(2, 135px);
+  gap: 5px;
+  margin-top: 20px; /* space below header */
+  
+}
+
+/* Individual Card */
+.card {
+  width: 230px;
+  height: 135px;
+  background-color: #ecf9fb;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row; /* text left, icon right */
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon inside Card */
+.card .icon {
+  font-family: "Phosphor Fill";
+  font-size: 28px;
+  color: #07b2c6;
+  margin: auto;
+}
+
+/* Card Title Text */
+.card-title {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin: auto;
+}
+
+
+
+/* ============================= */
+/*          BAR GRAPH            */
+/* ============================= */
+.chart-container {
+  background: #ecf9fb;
+  border-radius: 15px;
+  padding: 10px;
+  margin:19px auto;
+  
+}
+
+.chart-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.chart-icon {
+  font-size: 22px;
+  color: #02131A;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #02131A;
+}
+
+.chart-body {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.y-axis span {
+  font-size: 12px;
+  color: #333;
+}
+
+.bars {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 320px;
+}
+
+.bar {
+  width: 12px;
+  border-radius: 3px;
+}
+
+.bronze   { background: #02131A; }
+.silver   { background: #094C66; }
+.gold     { background: #435E61; }
+.diamond  { background: #13A4FF; }
+.platinum { background: #63D3FF; }
+
+.month-label {
+  font-size: 12px;
+  color: #02131A;
+  margin-top: 8px;
+}
+
+
+
+/* ============================= */
+/*     SUBSCRIBER STATUS CARD    */
+/* ============================= */
+.subscriber-status-card {
+  grid-column: span 2; /* makes it stretch full width under 4 cards */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.status-header h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #02131A;
+}
+
+.subscriber-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.subscriber-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ecf9fb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.subscriber-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+  color: #02131A;
+  margin: 0;
+}
+
+.plan {
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+}
+
+/* Status Badges */
+.status {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.status.paid {
+  background-color: #2ecc71;
+}
+
+.status.overdue {
+  background-color: #e74c3c;
+}
+
+.status.pending {
+  background-color: #f1c40f;
+  color: #000;
+}
+  
+
+
+/* ============================= */
+/*       DASHBOARD LAYOUT        */
+/* ============================= */
+.dashboard-body {
+  display: grid;
+  grid-template-columns: 30% 65%; /* Left (cards + status), Right (chart) */
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Left Column */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Column */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Make chart stretch cleanly beside cards */
+.chart-container {
+  width: 100%;
+  height: 100%;
+  background: #ecf9fb;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+
+/* ============================= */
+/*        DONUT CHART CARD       */
+/* ============================= */
+.donut-card {
+  background: #ecf9fb;
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+   width: 100%;
+  height: 100%;
+}
+
+.donut-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #02131A;
+  margin-bottom: 10px;
+}
+
+/* Center SVG */
+.donut-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Circle styling */
+.donut {
+  fill: none;
+  stroke-width: 20;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+
+/* Colors (match your Avalonia version) */
+.bronze { stroke: #02131A; }
+.silver { stroke: #094C66; }
+.gold { stroke: #435E61; }
+.diamond { stroke: #13A4FF; }
+.platinum { stroke: #74D6FD; }
+
+/* Legend styling */
+.donut-legend {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #02131A;
+}
+
+.legend-item .color {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+}
+
+.color.bronze { background: #02131A; }
+.color.silver { background: #094C66; }
+.color.gold { background: #435E61; }
+.color.diamond { background: #13A4FF; }
+.color.platinum { background: #74D6FD; }
+
+ /* Normalize new semantic elements for layout consistency */
+main, section, article, aside, header, footer, nav, figure {
+  display: block;
+  box-sizing: border-box;
+}

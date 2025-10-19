@@ -1,0 +1,434 @@
+/* ============================= */
+/*        GLOBAL STYLES          */
+/* ============================= */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #07B2C6;
+  color: #111827;
+  display: flex;
+  height: 100vh;
+}
+
+main.layout {
+  display: grid;
+  grid-template-columns: 302px 1fr;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ============================= */
+/*       SIDEBAR CONTAINER       */
+/* ============================= */
+aside.sidebar {
+  width: 302px;
+  height: 100vh;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* ============================= */
+/*        SIDEBAR CONTENT        */
+/* ============================= */
+nav.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 20px;
+}
+
+/* ============================= */
+/*             LOGO              */
+/* ============================= */
+.logo {
+  width: 217px;
+  height: 102px;
+  margin: 30px auto 20px auto;
+  display: block;
+}
+
+/* ============================= */
+/*          MENU SECTION         */
+/* ============================= */
+section.menu-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  gap: 10px;
+}
+
+.sidebar-text {
+  font-family: "Segoe UI", sans-serif;
+  color: #afb7bc;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================= */
+/*          SIDEBAR BTNS         */
+/* ============================= */
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 43px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 0 15px;
+  color: #006d7a;
+}
+
+.sidebar-btn .icon {
+  font-size: 18px;
+  color: #006d7a;
+  transition: color 0.2s ease;
+  margin-top: 2px;
+}
+
+.fontbt {
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ============================= */
+/*         HOVER EFFECTS         */
+/* ============================= */
+.sidebar-btn:hover {
+  background-color: #e0f7fa;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn:hover .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*        ACTIVE BUTTON STATE    */
+/* ============================= */
+.sidebar-btn.active {
+  background-color: #d8f1f3;
+  border: 1px solid #006d7a;
+  color: #004f55;
+}
+
+.sidebar-btn.active .icon {
+  color: #004f55;
+  font-weight: bold;
+}
+
+/* ============================= */
+/*          DIVIDER LINE         */
+/* ============================= */
+.divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+/* ============================= */
+/*          LOGOUT BUTTON        */
+/* ============================= */
+.logout {
+  margin: 20px 30px;
+  background-color: transparent;
+  color: #006d7a;
+  font-weight: 600;
+  width: 150px;
+}
+
+.logout:hover {
+  background-color: #ffeeee;
+  border: 1px solid #d43f3a;
+  color: #d43f3a;
+}
+
+/* ============================= */
+/*            MAIN SECTION       */
+/* ============================= */
+section.main-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ============================= */
+/*             HEADER             */
+/* ============================= */
+header.header {
+  height: 100px;
+  background-color: #07b2c6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Header Left */
+.header-left h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.header-left p {
+  color: white;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+}
+
+/* Header Right */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Notification Icon */
+.notification {
+  font-family: "Phosphor Fill";
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.notification:hover {
+  transform: scale(1.1);
+  color: #e0f7fa;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.profile-info .fullname {
+  font-size: 12px;
+  color: white;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* MAIN TICKET SECTION */
+.tickets-section {
+  background: #fff;
+  width: 98%;
+  height: 854px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.tickets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ticket-search {
+  width: 50%;
+  height: 39px;
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.ticket-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 20px;
+  background: #e6e6e6;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab.active {
+  background: #07b2c6;
+  color: white;
+}
+
+.ticket-list {
+  display: none;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ticket-list.active {
+  display: flex;
+}
+
+.ticket-card {
+  width: 330px;
+  height: 216px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.status.open {
+  background: #ffdddd;
+  color: #c00;
+}
+.status.inprogress {
+  background: #fff2cc;
+  color: #a77b00;
+}
+.status.resolved {
+  background: #ddffdd;
+  color: #008000;
+}
+
+.ticket-from {
+  font-size: 12px;
+  color: #555;
+}
+
+.ticket-details {
+  font-size: 12px;
+  color: #777;
+}
+
+.view-btn {
+  align-self: flex-end;
+  background: #07b2c6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #0090a0;
+}
+
+
+/* MODAL */
+.ticket-modal {
+  width: 1108px;
+  height: 854px;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #07b2c6;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-content {
+  margin-top: 20px;
+}
+
+.ticket-body {
+  margin-bottom: 15px;
+}
+
+.reply-section textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.resolve-btn,
+.send-btn {
+  background: #07b2c6;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resolve-btn:hover,
+.send-btn:hover {
+  background: #0090a0;
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desktop Admin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+
+<body>
+  <div class="layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+
+        <nav class="menu-section">
+          <h4 class="sidebar-text">MAIN MENU</h4>
+          <button class="sidebar-btn active" onclick="navigateTo('dashboard.html')">
+            <span class="icon ph ph-squares-four"></span>
+            <span class="fontbt">Dashboard</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('subscriptionmanagement.html')">
+            <span class="icon ph ph-newspaper"></span>
+            <span class="fontbt">Subscription Management</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('billing.html')">
+            <span class="icon ph ph-invoice"></span>
+            <span class="fontbt">Billing and Invoice</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('joborder.html')">
+            <span class="icon ph ph-users-three"></span>
+            <span class="fontbt">Job Order</span>
+          </button>
+        </nav>
+
+        <hr class="divider" />
+
+        <nav class="menu-section">
+          <h4 class="sidebar-text">GENERAL</h4>
+           <button class="sidebar-btn" onclick="navigateTo('support.html')">
+            <span class="icon ph ph-ticket"></span>
+            <span class="fontbt">Support Tickets</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('livechats.html')">
+            <span class="icon ph ph-chat-circle-dots"></span>
+            <span class="fontbt">Live Chats</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('settings.html')">
+            <span class="icon ph ph-gear"></span>
+            <span class="fontbt">Settings</span>
+          </button>
+        </nav>
+
+        <button class="sidebar-btn logout">
+          <span class="icon ph ph-sign-out"></span>
+          <span class="fontbt">Log Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="main-section">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <h1>Dashboard</h1>
+          <p>Here’s a quick overview of Active subscriptions.</p>
+        </div>
+
+        <div class="header-right">
+          <span class="ph ph-bell notification"></span>
+          <div class="profile">
+            <div class="avatar">A</div>
+            <div class="profile-info">
+              <p class="name">Admin</p>
+              <p class="fullname">Lawrence Adrian De Guzman</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD BODY -->
+      <section class="dashboard-body">
+        
+        <!-- LEFT COLUMN -->
+        <section class="left-column">
+          <section class="card-section">
+            <article class="card">
+              <h3 class="card-title">Total Subscribers</h3>
+              <span class="icon ph ph-users"></span>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">New Subscribers</h3>
+              <span class="icon ph ph-user-plus"></span>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Overdue Payments</h3>
+              <span class="icon ph ph-credit-card"></span>
+            </article>
+
+            <article class="card">
+              <h3 class="card-title">Total Users</h3>
+              <span class="icon ph ph-users-three"></span>
+            </article>
+          </section>
+
+          <section class="subscriber-status-card">
+            <header class="status-header">
+              <i class="ph ph-user-list icon"></i>
+              <h3>Subscriber Status</h3>
+            </header>
+
+            <ul class="subscriber-list">
+              <li class="subscriber-item">
+                <div class="subscriber-info">
+                  <img src="https://via.placeholder.com/40" class="avatar" />
+                  <div class="details">
+                    <p class="name">John Doe</p>
+                    <p class="plan">Gold Plan - $49/mo</p>
+                  </div>
+                </div>
+                <span class="status paid">Paid</span>
+              </li>
+
+              <li class="subscriber-item">
+                <div class="subscriber-info">
+                  <img src="https://via.placeholder.com/40" class="avatar" />
+                  <div class="details">
+                    <p class="name">Jane Smith</p>
+                    <p class="plan">Silver Plan - $29/mo</p>
+                  </div>
+                </div>
+                <span class="status overdue">Overdue</span>
+              </li>
+
+              <li class="subscriber-item">
+                <div class="subscriber-info">
+                  <img src="https://via.placeholder.com/40" class="avatar" />
+                  <div class="details">
+                    <p class="name">Alex Johnson</p>
+                    <p class="plan">Platinum Plan - $69/mo</p>
+                  </div>
+                </div>
+                <span class="status pending">Pending</span>
+              </li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- RIGHT COLUMN -->
+        <section class="right-column">
+          <article class="chart-container">
+            <header class="chart-header">
+              <i class="ph ph-chart-bar chart-icon"></i>
+              <h2 class="chart-title">Monthly Subscription by Plan</h2>
+            </header>
+            <div class="chart-body">
+              <div class="y-axis">
+                <span>50</span><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span>
+              </div>
+
+              <div class="bars">
+                <!-- JAN -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:100px"></div>
+                    <div class="bar silver" style="height:150px"></div>
+                    <div class="bar gold" style="height:200px"></div>
+                    <div class="bar diamond" style="height:250px"></div>
+                    <div class="bar platinum" style="height:80px"></div>
+                  </div>
+                  <p class="month-label">Jan</p>
+                </div>
+                <!-- FEB -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:120px"></div>
+                    <div class="bar silver" style="height:180px"></div>
+                    <div class="bar gold" style="height:240px"></div>
+                    <div class="bar diamond" style="height:300px"></div>
+                    <div class="bar platinum" style="height:60px"></div>
+                  </div>
+                  <p class="month-label">Feb</p>
+                </div>
+                <!-- MAR -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:110px"></div>
+                    <div class="bar silver" style="height:160px"></div>
+                    <div class="bar gold" style="height:220px"></div>
+                    <div class="bar diamond" style="height:280px"></div>
+                    <div class="bar platinum" style="height:100px"></div>
+                  </div>
+                  <p class="month-label">Mar</p>
+                </div>
+                <!-- APR -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:130px"></div>
+                    <div class="bar silver" style="height:190px"></div>
+                    <div class="bar gold" style="height:230px"></div>
+                    <div class="bar diamond" style="height:310px"></div>
+                    <div class="bar platinum" style="height:90px"></div>
+                  </div>
+                  <p class="month-label">Apr</p>
+                </div>
+                <!-- MAY -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:150px"></div>
+                    <div class="bar silver" style="height:210px"></div>
+                    <div class="bar gold" style="height:260px"></div>
+                    <div class="bar diamond" style="height:320px"></div>
+                    <div class="bar platinum" style="height:70px"></div>
+                  </div>
+                  <p class="month-label">May</p>
+                </div>
+                <!-- JUN -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:140px"></div>
+                    <div class="bar silver" style="height:170px"></div>
+                    <div class="bar gold" style="height:210px"></div>
+                    <div class="bar diamond" style="height:270px"></div>
+                    <div class="bar platinum" style="height:100px"></div>
+                  </div>
+                  <p class="month-label">Jun</p>
+                </div>
+                <!-- JUL -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:160px"></div>
+                    <div class="bar silver" style="height:200px"></div>
+                    <div class="bar gold" style="height:250px"></div>
+                    <div class="bar diamond" style="height:310px"></div>
+                    <div class="bar platinum" style="height:90px"></div>
+                  </div>
+                  <p class="month-label">Jul</p>
+                </div>
+                <!-- AUG -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:120px"></div>
+                    <div class="bar silver" style="height:180px"></div>
+                    <div class="bar gold" style="height:230px"></div>
+                    <div class="bar diamond" style="height:290px"></div>
+                    <div class="bar platinum" style="height:80px"></div>
+                  </div>
+                  <p class="month-label">Aug</p>
+                </div>
+                <!-- SEP -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:150px"></div>
+                    <div class="bar silver" style="height:220px"></div>
+                    <div class="bar gold" style="height:270px"></div>
+                    <div class="bar diamond" style="height:330px"></div>
+                    <div class="bar platinum" style="height:60px"></div>
+                  </div>
+                  <p class="month-label">Sep</p>
+                </div>
+                <!-- OCT -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:130px"></div>
+                    <div class="bar silver" style="height:200px"></div>
+                    <div class="bar gold" style="height:250px"></div>
+                    <div class="bar diamond" style="height:300px"></div>
+                    <div class="bar platinum" style="height:70px"></div>
+                  </div>
+                  <p class="month-label">Oct</p>
+                </div>
+                <!-- NOV -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:140px"></div>
+                    <div class="bar silver" style="height:190px"></div>
+                    <div class="bar gold" style="height:230px"></div>
+                    <div class="bar diamond" style="height:280px"></div>
+                    <div class="bar platinum" style="height:90px"></div>
+                  </div>
+                  <p class="month-label">Nov</p>
+                </div>
+                <!-- DEC -->
+                <div class="month">
+                  <div class="bar-group">
+                    <div class="bar bronze" style="height:160px"></div>
+                    <div class="bar silver" style="height:210px"></div>
+                    <div class="bar gold" style="height:260px"></div>
+                    <div class="bar diamond" style="height:320px"></div>
+                    <div class="bar platinum" style="height:100px"></div>
+                  </div>
+                  <p class="month-label">Dec</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="donut-card">
+            <header class="donut-header">
+              <h2>Subscription Distribution</h2>
+            </header>
+
+            <figure class="donut-chart">
+              <svg viewBox="0 0 200 200" width="200" height="200">
+                <circle class="donut bronze" cx="100" cy="100" r="90" stroke-dasharray="113 452" stroke-dashoffset="0"></circle>
+                <circle class="donut silver" cx="100" cy="100" r="90" stroke-dasharray="113 452" stroke-dashoffset="113"></circle>
+                <circle class="donut gold" cx="100" cy="100" r="90" stroke-dasharray="113 452" stroke-dashoffset="226"></circle>
+                <circle class="donut diamond" cx="100" cy="100" r="90" stroke-dasharray="113 452" stroke-dashoffset="339"></circle>
+                <circle class="donut platinum" cx="100" cy="100" r="90" stroke-dasharray="113 452" stroke-dashoffset="452"></circle>
+                <circle cx="100" cy="100" r="55" fill="#fff"></circle>
+                <text x="100" y="105" text-anchor="middle" font-size="14" fill="#000" font-weight="600">
+                  500 Subscribers
+                </text>
+              </svg>
+            </figure>
+
+            <footer class="donut-legend">
+              <div class="legend-item"><span class="color bronze"></span> BRONZE</div>
+              <div class="legend-item"><span class="color silver"></span> SILVER</div>
+              <div class="legend-item"><span class="color gold"></span> GOLD</div>
+              <div class="legend-item"><span class="color diamond"></span> DIAMOND</div>
+              <div class="legend-item"><span class="color platinum"></span> PLATINUM</div>
+            </footer>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="scripts/renderer.js"></script>
+</body>
+</html>

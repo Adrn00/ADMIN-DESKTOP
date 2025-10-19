@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Management</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="styles/subscriptionmanagement.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- SIDEBAR-->
+    <aside class="sidebar" >
+      <div class="sidebar-content">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <nav class="menu-section" aria-label="Main menu">
+          <h4 class="sidebar-text">MAIN MENU</h4>
+          <button class="sidebar-btn" onclick="navigateTo('dashboard.html')">
+            <span class="icon ph ph-squares-four"></span>
+            <span class="fontbt">Dashboard</span>
+          </button>
+          <button class="sidebar-btn active" onclick="navigateTo('subscriptionmanagement.html')">
+            <span class="icon ph ph-newspaper"></span>
+            <span class="fontbt">Subscription Management</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('billing.html')">
+            <span class="icon ph ph-invoice"></span>
+            <span class="fontbt">Billing and Invoice</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('joborder.html')">
+            <span class="icon ph ph-users-three"></span>
+            <span class="fontbt">Job Order</span>
+          </button>
+        </nav>
+
+        <hr class="divider" />
+
+        <nav class="menu-section" aria-label="General">
+          <h4 class="sidebar-text">GENERAL</h4>
+          <button class="sidebar-btn" onclick="navigateTo('support.html')">
+            <span class="icon ph ph-ticket"></span>
+            <span class="fontbt">Support Tickets</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('livechats.html')">
+            <span class="icon ph ph-chat-circle-dots"></span>
+            <span class="fontbt">Live Chats</span>
+          </button>
+          <button class="sidebar-btn" onclick="navigateTo('settings.html')">
+            <span class="icon ph ph-gear"></span>
+            <span class="fontbt">Settings</span>
+          </button>
+        </nav>
+
+        <button class="sidebar-btn logout">
+          <span class="icon ph ph-sign-out"></span>
+          <span class="fontbt">Log Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-section" role="main">
+      <!-- header -->
+      <header class="header">
+        <div class="header-left">
+          <h1>Subscription Management</h1>
+          <p>Manage user and plan subscriptions.</p>
+        </div>
+
+        <div class="header-right">
+          <span class="ph ph-bell notification" title="Notifications"></span>
+          <div class="profile">
+            <div class="avatar">A</div>
+            <div class="profile-info">
+              <p class="name">Admin</p>
+              <p class="fullname">Lawrence Adrian De Guzman</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- body grid -->
+      <section class="layout">
+
+        <!-- LEFT COLUMN -->
+        <aside class="left-column" aria-label="Subscribers column">
+
+          <!-- Total Subscriber card (302w x 147h target) -->
+          <section class="total-subs-card">
+            <div class="total-header">
+              <h3>All Active Subscribers</h3>
+              <p class="total-number" id="totalCount">10</p>
+            </div>
+
+            <div class="total-controls">
+              <input id="leftSearch" class="left-search" type="text" placeholder="Search by Name or ID..." />
+              <select id="statusFilter" class="left-filter">
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="suspended">Suspended</option>
+              </select>
+            </div>
+          </section>
+
+          <!-- Client list -->
+          <section class="client-list" id="clientList" aria-label="Client list">
+            <!-- 10 example clients -->
+            <!-- Each .client-row has data-status to let script filter -->
+            <article class="client-row" data-id="C001" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C001">
+              <div class="client-meta">
+                <div class="client-name">John Mateo</div>
+                <div class="client-plan">Platinum | 100 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+            <article class="client-row" data-id="C002" data-status="suspended">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C002">
+              <div class="client-meta">
+                <div class="client-name">Maria Santos</div>
+                <div class="client-plan">Gold | 50 Mbps</div>
+              </div>
+              <div class="client-status">Suspended</div>
+            </article>
+
+            <article class="client-row" data-id="C003" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C003">
+              <div class="client-meta">
+                <div class="client-name">Alex Johnson</div>
+                <div class="client-plan">Diamond | 75 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+            <article class="client-row" data-id="C004" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C004">
+              <div class="client-meta">
+                <div class="client-name">Jane Cruz</div>
+                <div class="client-plan">Silver | 35 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+            <article class="client-row" data-id="C005" data-status="suspended">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C005">
+              <div class="client-meta">
+                <div class="client-name">Paul Dela Rosa</div>
+                <div class="client-plan">Bronze | 30 Mbps</div>
+              </div>
+              <div class="client-status">Suspended</div>
+            </article>
+
+            <article class="client-row" data-id="C006" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C006">
+              <div class="client-meta">
+                <div class="client-name">Kristine L.</div>
+                <div class="client-plan">Platinum | 100 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+            <article class="client-row" data-id="C007" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C007">
+              <div class="client-meta">
+                <div class="client-name">Miguel Reyes</div>
+                <div class="client-plan">Gold | 50 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+            <article class="client-row" data-id="C008" data-status="suspended">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C008">
+              <div class="client-meta">
+                <div class="client-name">Anna Delgado</div>
+                <div class="client-plan">Silver | 35 Mbps</div>
+              </div>
+              <div class="client-status">Suspended</div>
+            </article>
+
+            <article class="client-row" data-id="C009" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C009">
+              <div class="client-meta">
+                <div class="client-name">Rafael Tan</div>
+                <div class="client-plan">Bronze | 30 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+            <article class="client-row" data-id="C010" data-status="active">
+              <img class="client-pic" src="https://via.placeholder.com/48" alt="Avatar C010">
+              <div class="client-meta">
+                <div class="client-name">Liza Ortega</div>
+                <div class="client-plan">Gold | 50 Mbps</div>
+              </div>
+              <div class="client-status">Active</div>
+            </article>
+
+          </section>
+        </aside>
+
+        <!-- RIGHT COLUMN -->
+        <section class="right-column" aria-label="Plans and details">
+
+          <!-- top action buttons -->
+          <div class="right-actions">
+            <button id="addPlanBtn" class="action-btn"><i class="ph ph-plus-circle"></i> Manage Plans</button>
+          </div>
+
+          <!-- Plans modal (large) triggered by manage plans-->
+          <div id="plansModal" class="modal">
+            <div class="modal-content large" role="dialog" aria-modal="true" aria-label="Plans modal">
+              <button class="close" id="closePlansModal">&times;</button>
+                <!-- ADD NEW PLAN BUTTON -->
+                 <div class="plans-actions">
+                   <button class="add-plan-btn" id="openAddPlanModal">
+                    <i class="ph ph-plus"></i> Add New Plan
+                   </button>
+                  </div>
+
+              <h2>Plans</h2>
+
+              <div class="plans-large-grid">
+                <!-- Each plan card 462w x 479h approx -->
+                <article class="plan-large">
+                  <header class="plan-large-header">
+                    <h3>Bronze</h3>
+                    <span class="plan-status">Active</span>
+                  </header>
+                  <div class="plan-large-price">₱700</div>
+                  <ul class="plan-large-list">
+                    <li><i class="ph ph-check-circle"></i> Basic features</li>
+                    <li><i class="ph ph-check-circle"></i> Email support</li>
+                    <li><i class="ph ph-check-circle"></i> 10GB storage</li>
+                    <li><i class="ph ph-check-circle"></i> Monthly Reports</li>
+                    <li><i class="ph ph-check-circle"></i> Community</li>
+                  </ul>
+                  <div class="plan-large-actions">
+                    <button class="edit-btn small">Edit</button>
+                    <button class="delete-btn small">Delete</button>
+                  </div>
+                </article>
+
+                <article class="plan-large">
+                  <header class="plan-large-header">
+                    <h3>Silver</h3>
+                    <span class="plan-status">Active</span>
+                  </header>
+                  <div class="plan-large-price">₱800</div>
+                  <ul class="plan-large-list">
+                    <li><i class="ph ph-check-circle"></i> All Bronze features</li>
+                    <li><i class="ph ph-check-circle"></i> 50GB storage</li>
+                    <li><i class="ph ph-check-circle"></i> Priority Support</li>
+                    <li><i class="ph ph-check-circle"></i> Analytics</li>
+                    <li><i class="ph ph-check-circle"></i> Monthly Reports</li>
+                  </ul>
+                  <div class="plan-large-actions">
+                    <button class="edit-btn small">Edit</button>
+                    <button class="delete-btn small">Delete</button>
+                  </div>
+                </article>
+
+                <article class="plan-large">
+                  <header class="plan-large-header">
+                    <h3>Gold</h3>
+                    <span class="plan-status">Active</span>
+                  </header>
+                  <div class="plan-large-price">₱1,000</div>
+                  <ul class="plan-large-list">
+                    <li><i class="ph ph-check-circle"></i> All Silver features</li>
+                    <li><i class="ph ph-check-circle"></i> 200GB storage</li>
+                    <li><i class="ph ph-check-circle"></i> Premium Support</li>
+                    <li><i class="ph ph-check-circle"></i> API access</li>
+                    <li><i class="ph ph-check-circle"></i> Custom reports</li>
+                  </ul>
+                  <div class="plan-large-actions">
+                    <button class="edit-btn small">Edit</button>
+                    <button class="delete-btn small">Delete</button>
+                  </div>
+                </article>
+
+                <article class="plan-large">
+                  <header class="plan-large-header">
+                    <h3>Diamond</h3>
+                    <span class="plan-status">Active</span>
+                  </header>
+                  <div class="plan-large-price">₱1,300</div>
+                  <ul class="plan-large-list">
+                    <li><i class="ph ph-check-circle"></i> All Gold features</li>
+                    <li><i class="ph ph-check-circle"></i> Unlimited storage</li>
+                    <li><i class="ph ph-check-circle"></i> Dedicated manager</li>
+                    <li><i class="ph ph-check-circle"></i> SLA guarantee</li>
+                    <li><i class="ph ph-check-circle"></i> Advanced analytics</li>
+                  </ul>
+                  <div class="plan-large-actions">
+                    <button class="edit-btn small">Edit</button>
+                    <button class="delete-btn small">Delete</button>
+                  </div>
+                </article>
+
+                <article class="plan-large">
+                  <header class="plan-large-header">
+                    <h3>Platinum</h3>
+                    <span class="plan-status">Active</span>
+                  </header>
+                  <div class="plan-large-price">₱1,500</div>
+                  <ul class="plan-large-list">
+                    <li><i class="ph ph-check-circle"></i> All Diamond features</li>
+                    <li><i class="ph ph-check-circle"></i> Enterprise support</li>
+                    <li><i class="ph ph-check-circle"></i> 24/7 assistance</li>
+                    <li><i class="ph ph-check-circle"></i> VIP reports</li>
+                    <li><i class="ph ph-check-circle"></i> Custom integrations</li>
+                  </ul>
+                  <div class="plan-large-actions">
+                    <button class="edit-btn small">Edit</button>
+                    <button class="delete-btn small">Delete</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subscriber Details & History section -->
+          <section class="subscriber-details" id="subscriberDetails" aria-live="polite">
+            <div class="subscriber-details-header">
+              <div>
+                <h2 id="detailName">Select a subscriber</h2>
+                <p id="detailIdEmail">ID: - • -</p>
+              </div>
+              <div class="subscriber-action-buttons">
+                <button id="cancelPlanBtn" class="btn red" disabled>Cancel Plan</button>
+                <button id="suspendPlanBtn" class="btn yellow" disabled>Suspend Plan</button>
+                <button id="updatePlanBtn" class="btn blue" disabled>Update Plan</button>
+              </div>
+            </div>
+
+            <div class="subscriber-cards">
+              <div class="info-card">
+                <h4>Current Balance</h4>
+                <p id="cardBalance">₱0</p>
+              </div>
+              <div class="info-card">
+                <h4>Active Subscription</h4>
+                <p id="cardActivePlan">-</p>
+              </div>
+              <div class="info-card">
+                <h4>Billing & Price</h4>
+                <p id="cardBilling">₱0 / month</p>
+              </div>
+              <div class="info-card">
+                <h4>Subscription Status</h4>
+                <p id="cardStatus">-</p>
+              </div>
+            </div>
+
+            <div class="history-table-wrap">
+              <table class="history-table" id="historyTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Subscription Details</th>
+                    <th>Billing & Price</th>
+                    <th>Current Bill</th>
+                    <th>Total Amount Due</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Example rows updated by JS when selecting client -->
+                </tbody>
+              </table>
+            </div>
+
+          </section>
+
+        </section>
+
+      </section>
+    </main>
+
+  </div>
+
+  <!-- Cancel Success small modal (498 x 122) -->
+  <div id="cancelSuccessModal" class="modal">
+    <div class="modal-content small cancel-small" role="alertdialog" aria-modal="true">
+      <button class="close" id="closeCancelSuccess">&times;</button>
+      <h3>Cancelled Successfully</h3>
+      <p id="cancelMsg">Subscription for <strong id="cancelName">-</strong> cancelled successfully.</p>
+    </div>
+  </div>
+
+  <!-- Update Subscription modal (707 x 664) -->
+  <div id="updateModalLarge" class="modal">
+    <div class="modal-content medium update-modal" role="dialog" aria-modal="true">
+      <button class="close" id="closeUpdateModal">&times;</button>
+      <h2>Update Subscription</h2>
+
+      <label>Subscriber Name</label>
+      <input id="updateName" type="text">
+
+      <label>Service Plan</label>
+      <select id="updatePlanSelect">
+        <option value="Bronze">Bronze - ₱700 (30 Mbps)</option>
+        <option value="Silver">Silver - ₱800 (35 Mbps)</option>
+        <option value="Gold">Gold - ₱1,000 (50 Mbps)</option>
+        <option value="Diamond">Diamond - ₱1,300 (75 Mbps)</option>
+        <option value="Platinum">Platinum - ₱1,500 (100 Mbps)</option>
+      </select>
+
+      <div class="modal-actions">
+        <button id="updateCancel" class="btn gray">Cancel</button>
+        <button id="updateSave" class="btn blue">Save Changes</button>
+      </div>
+    </div>
+  </div>
+  <!-- ADD NEW PLAN MODAL -->
+<div id="addPlanModal" class="modal">
+  <div class="modal-content medium" role="dialog" aria-modal="true" aria-label="Add Plan Modal">
+    <button class="close" id="closeAddPlanModal">&times;</button>
+    <h2>Create New Plan</h2>
+
+    <label for="planName">Plan Name:</label>
+    <input type="text" id="planName" placeholder="Enter plan name..." />
+
+    <label for="planPrice">Plan Price (₱):</label>
+    <input type="number" id="planPrice" placeholder="Enter price..." />
+
+    <label for="planFeatures">Features (comma-separated):</label>
+    <input type="text" id="planFeatures" placeholder="e.g., 100GB Storage, Premium Support..." />
+
+    <div class="toggle-row">
+      <p>Make Plan Active?</p>
+      <label class="switch">
+        <input type="checkbox" id="planActive" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn cancel" id="cancelAddPlan">Cancel</button>
+      <button class="btn submit" id="savePlan">Save Plan</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="scripts/renderer.js"></script>
+  <script src="scripts/subscription.js"></script>
+</body>
+</html>
